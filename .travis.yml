@@ -16,7 +16,6 @@ install:
 
 script:
   - ginkgo -r -cover  --randomizeSuites --failOnPending --trace --race --progress
-  - rm examples/examples.coverprofile
   - bash scripts/fmtpolice
   - gover
   - goveralls -coverprofile=gover.coverprofile -repotoken VgKiGnCxDKNP912GrkzXFBcSYKzqrRTp8
