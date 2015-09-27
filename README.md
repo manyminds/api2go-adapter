@@ -7,8 +7,8 @@
 [![Coverage Status](https://coveralls.io/repos/manyminds/api2go-adapter/badge.svg?branch=master&service=github)](https://coveralls.io/github/manyminds/api2go-adapter?branch=master)
 [![Go Report Card](http://goreportcard.com/badge/manyminds/api2go-adapter)](http://goreportcard.com/report/manyminds/api2go-adapter)
 
-This package provides useful adapters to use api2go with differnet frameworks
+This package provides useful adapters to use api2go with differnet frameworks.
 
-# Gin
+## Gin
 
 [Gin Framework Adapter](https://github.com/manyminds/api2go-adapter/gingonic)
