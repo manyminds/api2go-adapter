@@ -9,11 +9,11 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/manyminds/api2go"
+	. "github.com/manyminds/api2go-adapter/gorillamux"
 	"github.com/manyminds/api2go/examples/model"
 	"github.com/manyminds/api2go/examples/resource"
 	"github.com/manyminds/api2go/examples/storage"
 	"github.com/manyminds/api2go/routing"
-	. "github.com/manyminds/api2go-adapter/gorillamux"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
