@@ -13,3 +13,8 @@ This package provides useful adapters to use api2go with differnet frameworks.
 [Gin Framework Adapter](https://github.com/manyminds/api2go-adapter/tree/master/gingonic)
 
 [![GoDoc](https://godoc.org/github.com/manyminds/api2go-adapter/gingonic?status.svg)](https://godoc.org/github.com/manyminds/api2go-adapter/gingonic)
+
+
+[Gorilla Mux Adapter](https://github.com/manyminds/api2go-adapter/tree/master/gorillamux)
+
+[![GoDoc](https://godoc.org/github.com/manyminds/api2go-adapter/gorillamux?status.svg)](https://godoc.org/github.com/manyminds/api2go-adapter/gorillamux)
