@@ -33,7 +33,6 @@ var _ = Describe("api2go with gorillamux router adapter", func() {
 		api = api2go.NewAPIWithRouting(
 			"api",
 			api2go.NewStaticResolver("/"),
-			api2go.DefaultContentMarshalers,
 			router,
 		)
 
@@ -50,7 +49,7 @@ var _ = Describe("api2go with gorillamux router adapter", func() {
 
 	Context("CRUD Tests", func() {
 		It("will create a new user", func() {
-			reqBody := strings.NewReader(`{"data": [{"attributes": {"username": "Sansa Stark"}, "id": "1", "type": "users"}]}`)
+			reqBody := strings.NewReader(`{"data": {"attributes": {"user-name": "Sansa Stark"}, "id": "1", "type": "users"}}`)
 			req, err := http.NewRequest("POST", "/api/users", reqBody)
 			Expect(err).To(BeNil())
 			r.ServeHTTP(rec, req)
@@ -86,7 +85,7 @@ var _ = Describe("api2go with gorillamux router adapter", func() {
 		})
 
 		It("update the username", func() {
-			reqBody := strings.NewReader(`{"data": {"id": "1", "attributes": {"username": "Alayne"}, "type" : "users"}}`)
+			reqBody := strings.NewReader(`{"data": {"id": "1", "attributes": {"user-name": "Alayne"}, "type" : "users"}}`)
 			req, err := http.NewRequest("PATCH", "/api/users/1", reqBody)
 			Expect(err).To(BeNil())
 			r.ServeHTTP(rec, req)
@@ -129,7 +128,7 @@ var _ = Describe("api2go with gorillamux router adapter", func() {
 		})
 
 		It("won't find her anymore", func() {
-			expected := `{"errors":[{"status":"404","title":"User for id 1 not found"}]}`
+			expected := `{"errors":[{"status":"404","title":"http error (404) User for id 1 not found and 0 more errors, User for id 1 not found"}]}`
 			req, err := http.NewRequest("GET", "/api/users/1", nil)
 			Expect(err).To(BeNil())
 			r.ServeHTTP(rec, req)
