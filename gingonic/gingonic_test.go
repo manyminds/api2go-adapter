@@ -85,6 +85,12 @@ var _ = Describe("api2go with gingonic router adapter", func() {
 			Expect(string(rec.Body.Bytes())).To(MatchJSON((expectedUser)))
 		})
 
+		It("can call handle", func() {
+			handler := api.Handler()
+			_, ok := handler.(http.Handler)
+			Expect(ok).To(Equal(true))
+		})
+
 		It("update the username", func() {
 			reqBody := strings.NewReader(`{"data": {"id": "1", "attributes": {"user-name": "Alayne"}, "type" : "users"}}`)
 			req, err := http.NewRequest("PATCH", "/api/users/1", reqBody)

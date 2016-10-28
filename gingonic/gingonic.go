@@ -12,7 +12,7 @@ type ginRouter struct {
 }
 
 func (g ginRouter) Handler() http.Handler {
-	return g.Handler()
+	return g.router
 }
 
 func (g ginRouter) Handle(protocol, route string, handler routing.HandlerFunc) {
