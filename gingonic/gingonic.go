@@ -3,7 +3,8 @@ package gingonic
 import (
 	"net/http"
 
-	"github.com/gin-gonic/gin"
+	gin "gopkg.in/gin-gonic/gin.v1"
+
 	"github.com/manyminds/api2go/routing"
 )
 
